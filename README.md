@@ -153,6 +153,8 @@ If you're using submodules or Swift Package Manager, we encourage you the add th
 
 In order to link your app with the framework, you have to add the TPGHorizontalMenu in 'Embedded Binaries' list from 'General' section on application's target.
 
+![Add subproject example](assets/add-subproject-example)
+
 ## Tips
 
 If you need to customize any kind of layout, you may do so by implementing `LayoutControllerDelegate`:
@@ -281,7 +283,7 @@ func layoutControllerMenuGeometry(layoutController: LayoutController) -> MenuGeo
 
 Highlighting and selection may be achieved by implementing `Highlightable` and `Selectable` by the view which is used on menu items. 
 
-UIKit classes already implement these protocols, such as [UIControl](https://github.com/3pillarlabs/ios-horizontalmenu/blob/master/Sources/Highlightable.swift). Others may only implement `Highlightable`, such as [UILabel](https://github.com/3pillarlabs/ios-horizontalmenu/blob/master/Sources/Selectable.swift).
+UIKit classes already implement these protocols, such as [UIControl](Sources/Highlightable.swift). Others may only implement `Highlightable`, such as [UILabel](Sources/Selectable.swift).
 
 ``` swift
 class MenuItemView: UIView, Highlightable, Selectable {
