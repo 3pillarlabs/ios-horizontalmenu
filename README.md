@@ -19,7 +19,7 @@
 If you're using UIKit, you'll feel at home.
 It's a UI component similar to UIPageViewController that helps you to create a menu designed for iOS with a dynamic number of items.
 
-![GIF placeholder]()
+![Swipe animation](assets/swipe-animation.gif)
 
 ## Table of contents
 
@@ -148,6 +148,8 @@ To be added.
 ### Subproject dependency
 
 If you're using submodules or Swift Package Manager, we encourage you the add the framework as a subproject in your workspace/project
+
+![Embed binary example](assets/embed-binary-example.gif)
 
 ### Linkage
 
