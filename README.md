@@ -1,13 +1,13 @@
 <div align="center" markdown="1">
-
 	![Logo](assets/logo.png)
-
-	<a href="https://github.com/Carthage/Carthage">![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)]<a/>
-	[![CocoaPods compatible](https://img.shields.io/badge/CocoaPods-compatible-4BC51D.svg?style=flat)](https://github.com/CocoaPods/CocoaPods)
-	[![Swift Package Manager compatible](https://img.shields.io/badge/Swift_Package_Manager-compatible-4BC51D.svg?style=flat)](https://github.com/CocoaPods/CocoaPods)
-	[![Swift 3.0](https://img.shields.io/badge/Swift_3.0-compatible-orange.svg?style=flat)](https://swift.org)
-
 </div>
+
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![CocoaPods compatible](https://img.shields.io/badge/CocoaPods-compatible-4BC51D.svg?style=flat)](https://github.com/CocoaPods/CocoaPods)
+[![Swift Package Manager compatible](https://img.shields.io/badge/Swift_Package_Manager-compatible-4BC51D.svg?style=flat)](https://github.com/CocoaPods/CocoaPods)
+[![Swift 3.0](https://img.shields.io/badge/Swift_3.0-compatible-orange.svg?style=flat)](https://swift.org)
+
+
 
 ## Description
 
