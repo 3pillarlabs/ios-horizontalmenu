@@ -17,21 +17,21 @@
 - [x] Custom life cycle for view controllers associated with menu items
 
 If you're using UIKit, you'll feel at home.
-It's a UI component similar to UIPageViewController helps you to create a menu designed for iOS with a dynamic number of items.
+It's a UI component similar to UIPageViewController that helps you to create a menu designed for iOS with a dynamic number of items.
 
 ![GIF placeholder]()
 
 ## Table of contents
 
-- [Usage](github-url#usage)
-- [Installation](github-url#installation)
-	- [Git Submodule](github-url#git-submodule)
-	- [Carthage](github-url#carthage)
-	- [Swift Package Manager](github-url#swift-package-manager)
-	- [CocoaPods](github-url#cocoapods)
-- [Tips](github-url#tips)
-- [Contribution](github-url#contribution)
-- [License](github-url#license)
+- [Usage](https://github.com/3pillarlabs/ios-horizontalmenu#usage)
+- [Installation](https://github.com/3pillarlabs/ios-horizontalmenu#installation)
+	- [Git Submodule](https://github.com/3pillarlabs/ios-horizontalmenu#1-git-submodule)
+	- [Carthage](https://github.com/3pillarlabs/ios-horizontalmenu#2-carthage)
+	- [Swift Package Manager](https://github.com/3pillarlabs/ios-horizontalmenu#3-swift-package-manager)
+	- [CocoaPods](https://github.com/3pillarlabs/ios-horizontalmenu#4-cocoapods)
+- [Tips](https://github.com/3pillarlabs/ios-horizontalmenu#tips)
+- [Contribution](https://github.com/3pillarlabs/ios-horizontalmenu#contribution)
+- [License](https://github.com/3pillarlabs/ios-horizontalmenu#license)
 
 ## Usage
 
@@ -361,10 +361,16 @@ An important thing to know is that default animations have a duration of 0.3 sec
 
 ## Contribution
 
-Did you find a bug in the framework? Create an [issue](link).
+Did you find a bug in the framework? Create an [issue](https://github.com/3pillarlabs/ios-horizontalmenu/issues).
 
-Want to help us implement new features or fix a bug? Create a [pull request](link).
+Want to help us implement new features or fix a bug? Create a [pull request](https://github.com/3pillarlabs/ios-horizontalmenu/pulls).
 
 ## License
 
-MIT, 3Pillar Global
+**Horizontal Menu** is released under MIT license. See [LICENSE](LICENSE) for details.
+
+## About this project
+
+[![3Pillar Global](https://www.3pillarglobal.com/wp-content/themes/base/library/images/logo_3pg.png)](http://www.3pillarglobal.com/)
+
+**Horizontal Menu** is developed and maintained by [3Pillar Global](http://www.3pillarglobal.com/).
