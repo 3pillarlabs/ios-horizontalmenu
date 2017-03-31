@@ -153,7 +153,7 @@ If you're using submodules or Swift Package Manager, we encourage you the add th
 
 In order to link your app with the framework, you have to add the TPGHorizontalMenu in 'Embedded Binaries' list from 'General' section on application's target.
 
-![Add subproject example](assets/add-subproject-example)
+![Add subproject example](assets/add-subproject-example.gif)
 
 ## Tips
 
