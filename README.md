@@ -34,7 +34,7 @@ It's a UI component similar to UIPageViewController that helps you to create a m
 - [Installation](https://github.com/3pillarlabs/ios-horizontalmenu#installation)
 	- [Git Submodule](https://github.com/3pillarlabs/ios-horizontalmenu#1-git-submodule)
 	- [Carthage](https://github.com/3pillarlabs/ios-horizontalmenu#2-carthage)
-	- [CocoaPods](https://github.com/3pillarlabs/ios-horizontalmenu#4-cocoapods)
+	- [CocoaPods](https://github.com/3pillarlabs/ios-horizontalmenu#3-cocoapods)
 - [Tips](https://github.com/3pillarlabs/ios-horizontalmenu#tips)
 - [Contribution](https://github.com/3pillarlabs/ios-horizontalmenu#contribution)
 - [License](https://github.com/3pillarlabs/ios-horizontalmenu#license)
