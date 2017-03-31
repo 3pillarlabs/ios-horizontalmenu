@@ -139,13 +139,13 @@ Comming soon.
 
 If you're using submodules or Swift Package Manager, we encourage you the add the framework as a subproject in your workspace/project
 
-![Embed binary example](assets/embed-binary-example.gif)
+![Embed binary example](assets/add-subproject-example.gif)
 
 ### Linkage
 
 In order to link your app with the framework, you have to add the TPGHorizontalMenu in 'Embedded Binaries' list from 'General' section on application's target.
 
-![Add subproject example](assets/add-subproject-example.gif)
+![Add subproject example](assets/embed-binary-example.gif)
 
 ## Tips
 
