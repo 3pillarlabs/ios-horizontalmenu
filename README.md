@@ -128,7 +128,7 @@ After fetch, choose the commit which is tagged with the version you want to poin
 ### 2. [Carthage](https://github.com/Carthage/Carthage)
 
 ```
-github "Alamofire/Alamofire" ~> 1.0
+github "3pillarlabs/ios-horizontalmenu" ~> 1.0
 ```
 
 
@@ -144,7 +144,12 @@ For now
 ```
 swift package generate-xcodeproj
 ```
-creates a macOS framework but without setting correctly the version. We recommend to add the framework as a [subproject](https://github.com/3pillarlabs/ios-horizontalmenu#subproject-dependency) in your workspace/project. The drawback is that when use update the version you'll need to update the reference to project again.
+creates a macOS framework but without setting correctly the version. We recommend to add the framework as a [subproject](https://github.com/3pillarlabs/ios-horizontalmenu#subproject-dependency) in your workspace/project. The code is available the 
+
+- Swift 3.0: ./Packages/ios-horizontalmenu 
+- Swift 3.1: .../.build/checkouts/ios-horizontalmenu 
+
+The drawback is that when use update the version you'll need to update the reference to project again.
 Check official [website](https://swift.org/package-manager/) for see when ios frameworks will be available.
 
 ### 4. [CocoaPods](https://github.com/CocoaPods/CocoaPods)
