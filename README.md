@@ -1,4 +1,5 @@
 # Horizontal Menu
+
 <p align="center">
 	<img src="assets/logo.png"/>
 </p>
@@ -20,7 +21,9 @@
 If you're using UIKit, you'll feel at home.
 It's a UI component similar to UIPageViewController that helps you to create a menu designed for iOS with a dynamic number of items.
 
-![Swipe animation](assets/swipe-animation.gif)
+<p align="center">
+	<img src="assets/swipe-animation.gif"/>
+</p>
 
 ## Table of contents
 
