@@ -6,7 +6,6 @@
 
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![CocoaPods compatible](https://img.shields.io/badge/CocoaPods-compatible-4BC51D.svg?style=flat)](https://github.com/CocoaPods/CocoaPods)
-[![Swift Package Manager compatible](https://img.shields.io/badge/Swift_Package_Manager-compatible-4BC51D.svg?style=flat)](https://github.com/CocoaPods/CocoaPods)
 [![Swift 3.0](https://img.shields.io/badge/Swift_3.0-compatible-orange.svg?style=flat)](https://swift.org)
 
 
@@ -35,7 +34,6 @@ It's a UI component similar to UIPageViewController that helps you to create a m
 - [Installation](https://github.com/3pillarlabs/ios-horizontalmenu#installation)
 	- [Git Submodule](https://github.com/3pillarlabs/ios-horizontalmenu#1-git-submodule)
 	- [Carthage](https://github.com/3pillarlabs/ios-horizontalmenu#2-carthage)
-	- [Swift Package Manager](https://github.com/3pillarlabs/ios-horizontalmenu#3-swift-package-manager)
 	- [CocoaPods](https://github.com/3pillarlabs/ios-horizontalmenu#4-cocoapods)
 - [Tips](https://github.com/3pillarlabs/ios-horizontalmenu#tips)
 - [Contribution](https://github.com/3pillarlabs/ios-horizontalmenu#contribution)
@@ -123,7 +121,7 @@ Choose your preffered dependency manager:
 git submodule add https://github.com/3pillarlabs/ios-horizontalmenu.git
 ```
 
-After fetch, choose the commit which is tagged with the version you want to point to. Then [link](https://github.com/3pillarlabs/ios-horizontalmenu#linkage) the framework.
+After fetch, choose the commit which is tagged with the version you want to point to. Then you have to [add](https://github.com/3pillarlabs/ios-horizontalmenu#subproject-dependency) and  [link](https://github.com/3pillarlabs/ios-horizontalmenu#linkage) the framework.
 
 ### 2. [Carthage](https://github.com/Carthage/Carthage)
 
@@ -131,31 +129,10 @@ After fetch, choose the commit which is tagged with the version you want to poin
 github "3pillarlabs/ios-horizontalmenu" ~> 1.0
 ```
 
-
-### 3. [Swift Package Manager](https://swift.org/package-manager/)
-
-In the array of dependencies add a new dependency:
+### 3. [CocoaPods](https://github.com/CocoaPods/CocoaPods)
 
 ```
-.Package(url: "https://github.com/3pillarlabs/ios-horizontalmenu.git", majorVersion: 1)
-```
-
-For now 
-```
-swift package generate-xcodeproj
-```
-creates a macOS framework but without setting correctly the version. We recommend to add the framework as a [subproject](https://github.com/3pillarlabs/ios-horizontalmenu#subproject-dependency) in your workspace/project. The code is available the 
-
-- Swift 3.0: ./Packages/ios-horizontalmenu 
-- Swift 3.1: .../.build/checkouts/ios-horizontalmenu 
-
-The drawback is that when use update the version you'll need to update the reference to project again.
-Check official [website](https://swift.org/package-manager/) for see when ios frameworks will be available.
-
-### 4. [CocoaPods](https://github.com/CocoaPods/CocoaPods)
-
-```
-To be added.
+Comming soon.
 ```
 
 ### Subproject dependency
