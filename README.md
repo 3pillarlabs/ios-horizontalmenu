@@ -1,6 +1,7 @@
 # Horizontal Menu
-
-<div style="text-align:center"><img src ="assets/logo.png" /></div>
+<p align="center">
+	<img src="assets/logo.png"/>
+</p>
 
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![CocoaPods compatible](https://img.shields.io/badge/CocoaPods-compatible-4BC51D.svg?style=flat)](https://github.com/CocoaPods/CocoaPods)
