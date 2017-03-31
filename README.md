@@ -19,9 +19,13 @@
 If you're using UIKit, you'll feel at home.
 It's a UI component similar to UIPageViewController that helps you to create a menu designed for iOS with a dynamic number of items.
 
-<p align="center">
-	<img src="assets/swipe-animation.gif"/>
-</p>
+<div style="text-align:center" markdown="1">
+
+![Alt Text](assets/swipe-animation.gif)
+
+</div>
+
+![Alt](assets/swipe-animation.gif#center)
 
 ## Table of contents
 
