@@ -1,5 +1,7 @@
 <div align="center" markdown="1">
-	![Logo](assets/logo.png)
+
+![Logo](assets/logo.png)
+
 </div>
 
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
