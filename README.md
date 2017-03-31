@@ -109,32 +109,49 @@ Available in iOS 9.0 and later.
 
 Choose your preffered dependency manager:
 
-### 1. Git submodule
+### 1. [Git submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules)
+
+```
+git submodule add https://github.com/3pillarlabs/ios-horizontalmenu.git
+```
+
+After fetch, choose the commit which is tagged with the version you want to point to. Then [link](https://github.com/3pillarlabs/ios-horizontalmenu#linkage) the framework.
+
+### 2. [Carthage](https://github.com/Carthage/Carthage)
+
+```
+github "Alamofire/Alamofire" ~> 1.0
+```
+
+
+### 3. [Swift Package Manager](https://swift.org/package-manager/)
+
+In the array of dependencies add a new dependency:
+
+```
+.Package(url: "https://github.com/3pillarlabs/ios-horizontalmenu.git", majorVersion: 1)
+```
+
+For now 
+```
+swift package generate-xcodeproj
+```
+creates a macOS framework but without setting correctly the version. We recommend to add the framework as a [subproject](https://github.com/3pillarlabs/ios-horizontalmenu#subproject-dependency) in your workspace/project. The drawback is that when use update the version you'll need to update the reference to project again.
+Check official [website](https://swift.org/package-manager/) for see when ios frameworks will be available.
+
+### 4. [CocoaPods](https://github.com/CocoaPods/CocoaPods)
 
 ```
 To be added.
 ```
 
-### 2. Carthage
+### Subproject dependency
 
-```
-To be added.
-```
+If you're using submodules or Swift Package Manager, we encourage you the add the framework as a subproject in your workspace/project
 
+### Linkage
 
-### 3. Swift Package Manager
-
-```
-To be added.
-```
-
-
-### 4. CocoaPods
-
-```
-To be added.
-```
-
+In order to link your app with the framework, you have to add the TPGHorizontalMenu in 'Embedded Binaries' list from 'General' section on application's target.
 
 ## Tips
 
