@@ -101,11 +101,11 @@ func horizontalMenuViewController(horizontalMenuViewController: HorizontalMenuVi
 }
 ```
 
-and now should be able to have the menu visible in your application.
+and now you have the menu visible in your application.
 
 ## Installation
 
-Currently we support iOS 9.0 and later. 
+Available in iOS 9.0 and later. 
 
 Choose your preffered dependency manager:
 
@@ -169,7 +169,7 @@ func layoutControllerMenuGeometry(layoutController: LayoutController) -> MenuGeo
 
 ### 3. How to customize the size of a menu item view?
 
-The size of menu item can be change to be a fixed size or compute your size depeneding on the data you want to display on menu item.
+The size of menu item can be change to be a fixed size or compute your size to be dependant on the data you want to display on menu item.
 
 ``` swift
 // Fixed size
@@ -212,7 +212,7 @@ func layoutController(layoutController: LayoutController, geometryForItemAt inde
 
 ### 4. How to customize height of scroll indicator view?
 
-The height of scroll view may be customized through `ScrollIndicatorGeometry`. An instance of `ScrollIndicatorGeometry` can provided as parameter to `MenuGeometry`.
+The height of scroll indicator view may be customized through `ScrollIndicatorGeometry`. An instance of `ScrollIndicatorGeometry` can provided as parameter to `MenuGeometry`.
 
 ``` swift
 func layoutControllerMenuGeometry(layoutController: LayoutController) -> MenuGeometry {
@@ -223,7 +223,7 @@ func layoutControllerMenuGeometry(layoutController: LayoutController) -> MenuGeo
 
 ### 5. How to set scroll indicator vertical alignment?
 
-As we customize the height of scroll indicator we can also change the alignment: `bottom` or `top`. The default is `bottom`.
+As we customize the height of scroll indicator view we can also change the alignment: `bottom` or `top`. The default is `bottom`.
 
 ``` swift
 func layoutControllerMenuGeometry(layoutController: LayoutController) -> MenuGeometry {
@@ -241,7 +241,7 @@ The vertical alignment of a menu item can be changed through geometry object. Po
 - `center` (default)
 - `bottom`
 
-Be aware that you may also need to the set a preferred content height of menu.
+Be aware that you might need to the set a preferred content height of menu.
 
 ``` swift
 func layoutController(layoutController: LayoutController, geometryForItemAt index: Int) -> ItemGeometry {
@@ -262,7 +262,9 @@ func layoutControllerMenuGeometry(layoutController: LayoutController) -> MenuGeo
 
 ### 8. How to create a custom menu item with highlight and/or select state?
 
-Highlighting and selection may be achieved by implementing `Highlightable` and `Selectable`. UIKit classes already implement these protocols (such as UIControl); others may only implement `Highlightable` (such as UILabel).
+Highlighting and selection may be achieved by implementing `Highlightable` and `Selectable` by the view which is used on menu items. 
+
+UIKit classes already implement these protocols, such as [UIControl](https://github.com/3pillarlabs/ios-horizontalmenu/blob/master/Sources/Highlightable.swift). Others may only implement `Highlightable`, such as [UILabel](https://github.com/3pillarlabs/ios-horizontalmenu/blob/master/Sources/Selectable.swift).
 
 ``` swift
 class MenuItemView: UIView, Highlightable, Selectable {
@@ -282,7 +284,7 @@ class MenuItemView: UIView, Highlightable, Selectable {
 
 ### 9. How to use a custom menu item view?
 
-MenuItem provide a default initializer which accepts an instance of UIView.
+MenuItem provides a default initializer which accepts an instance of UIView.
 
 ``` swift
 func horizontalMenuViewController(horizontalMenuViewController: HorizontalMenuViewController,
@@ -297,7 +299,7 @@ func horizontalMenuViewController(horizontalMenuViewController: HorizontalMenuVi
 
 ### 10. How to use custom animation for selection?
 
-In order to customize the animation you need to implement `HorizontalMenuViewControllerDelegate`.
+In order to customize the animations you need to implement `HorizontalMenuViewControllerDelegate`.
 
 ``` swift
 func horizontalMenuViewController(horizontalMenuViewController: HorizontalMenuViewController,
@@ -308,6 +310,8 @@ func horizontalMenuViewController(horizontalMenuViewController: HorizontalMenuVi
 
 ### 11. How to use custom animation for appearance when user selects a menu item?
 
+As we customize selection animation, we can do it for appearance as well when the current item is not visible and user swipes outside the boundaries (before first item and after the last item) of menu.
+
 ``` swift
 func horizontalMenuViewControllerAnimationForEdgeAppearance(horizontalMenuViewController: HorizontalMenuViewController) -> Animation {
     return Animation(duration: 0.5) // customize animation as you need
@@ -316,7 +320,7 @@ func horizontalMenuViewControllerAnimationForEdgeAppearance(horizontalMenuViewCo
 
 ### 12. How to update a screen progressively as user drags?
 
-The view controller which is provided through `HorizontalMenuViewControllerDataSource` may implement `HorizontalMenuChild`. The functions from this protocol will be called when user swipes left or right the change the current item.
+The view controller which is provided through `HorizontalMenuViewControllerDataSource` may implement `HorizontalMenuChild`. The functions from this protocol will be called when user swipes left or right in order to change the current item.
 
 ``` swift
 class MenuScreenViewController: UIViewController, HorizontalMenuChild {
@@ -363,7 +367,7 @@ An important thing to know is that default animations have a duration of 0.3 sec
 
 Did you find a bug in the framework? Create an [issue](https://github.com/3pillarlabs/ios-horizontalmenu/issues).
 
-Want to help us implement new features or fix a bug? Create a [pull request](https://github.com/3pillarlabs/ios-horizontalmenu/pulls).
+Want to help us implement new features or fix bugs? Create a [pull request](https://github.com/3pillarlabs/ios-horizontalmenu/pulls).
 
 ## License
 
