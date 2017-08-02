@@ -27,4 +27,14 @@ public protocol MenuDataSource: class {
     
     /// Boolean to configure if the intermediate screens on menu item selection should be loaded
     var preloadIntermediateScreensOnSelection: Bool { get }
+
+    /// The number of elements is the same for items and screen.
+    /// However the items.count might be 0 because they are optional.
+    var numberOfElements: Int { get }
+}
+
+extension MenuDataSource {
+    public func isValid(index: Int) -> Bool {
+        return index >= 0 && index < numberOfElements
+    }
 }

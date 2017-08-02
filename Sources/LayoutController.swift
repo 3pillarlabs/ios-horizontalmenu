@@ -210,15 +210,15 @@ public class LayoutController: NSObject, GeometryHolder {
     private func computeScreensContentSize() -> CGSize {
         var size = CGSize()
         
-        size.width = CGFloat(menuDataSource.items.count) * menuDataSource.screenScrollView.bounds.width
+        size.width = CGFloat(menuDataSource.numberOfElements) * menuDataSource.screenScrollView.bounds.width
         size.height = menuDataSource.menuContainerView.bounds.height - menuDataSource.itemsScrollView.bounds.height
         
         return size
     }
     
     private func convertTransitionIntoLayout(scroll transition: ScrollTransition) -> Transition {
-        let fromIndexIsValid = menuDataSource.items.isValid(index: transition.fromIndex)
-        let toIndexIsValid = menuDataSource.items.isValid(index: transition.toIndex)
+        let fromIndexIsValid = menuDataSource.isValid(index: transition.fromIndex)
+        let toIndexIsValid = menuDataSource.isValid(index: transition.toIndex)
         
         switch (fromIndexIsValid, toIndexIsValid) {
         case (true, true):

@@ -9,19 +9,19 @@
 import UIKit
 
 @objc public protocol HorizontalMenuViewControllerDataSource: class {
-    /// Asks the data source for the number of items in the menu.
+    /// Asks the data source for the number of elements in the menu.
     ///
     /// - Parameter horizontalMenuViewController: the view controller which asks the information.
-    /// - Returns: the number of items.
-    func horizontalMenuViewControllerNumberOfItems(horizontalMenuViewController: HorizontalMenuViewController) -> Int
+    /// - Returns: the number of elements.
+    func horizontalMenuViewControllerNumberOfElements(horizontalMenuViewController: HorizontalMenuViewController) -> Int
     /// Asks the data source for menu item which should be used at provided index.
     ///
     /// - Parameters:
     ///   - horizontalMenuViewController: the view controller which asks the information.
     ///   - index: the index for which item is requested.
     /// - Returns: menu item.
-    func horizontalMenuViewController(horizontalMenuViewController: HorizontalMenuViewController,
-                                      menuItemFor index: Int) -> MenuItem
+    @objc optional func horizontalMenuViewController(horizontalMenuViewController: HorizontalMenuViewController,
+                                                     menuItemFor index: Int) -> MenuItem
     /// Asks the data source for view controller should be used at provided index.
     ///
     /// - Parameters:
@@ -111,6 +111,10 @@ public class HorizontalMenuViewController: UIViewController, MenuDataSource, Pag
     ///
     /// Default value is false.
     public var preloadIntermediateScreensOnSelection: Bool = false
+
+    public var numberOfElements: Int {
+        return dataSource?.horizontalMenuViewControllerNumberOfElements(horizontalMenuViewController: self) ?? 0
+    }
     
     internal (set) var selectionOperation: Operation?
     
@@ -188,7 +192,7 @@ public class HorizontalMenuViewController: UIViewController, MenuDataSource, Pag
             layoutController.layout(scrollIndicator: scrollIndicator, transition: scrollTransition)
         }
         updateScrollIndicatorColor(with: scrollTransition)
-        let animated = !items.isValid(index: scrollTransition.toIndex)
+        let animated = !isValid(index: scrollTransition.toIndex)
         appearenceController.updateItemsScrollView(using: scrollTransition, animated: animated)
         
         delegate?.horizontalMenuViewController?(horizontalMenuViewController: self,
@@ -234,14 +238,13 @@ public class HorizontalMenuViewController: UIViewController, MenuDataSource, Pag
     }
     
     private func populateMenuItems() {
-        let numberOfItems = dataSource?.horizontalMenuViewControllerNumberOfItems(horizontalMenuViewController: self) ?? 0
-        guard numberOfItems > 0 else { return }
-        
         items = []
+
+        guard numberOfElements > 0 else { return }
         
-        for index in 0..<numberOfItems {
-            if let menuItem = dataSource?.horizontalMenuViewController(horizontalMenuViewController: self,
-                                                                       menuItemFor: index) {
+        for index in 0..<numberOfElements {
+            if let menuItem = dataSource?.horizontalMenuViewController?(horizontalMenuViewController: self,
+                                                                        menuItemFor: index) {
                 items.append(menuItem)
             }
         }
@@ -270,9 +273,9 @@ public class HorizontalMenuViewController: UIViewController, MenuDataSource, Pag
     }
     
     private func updateScrollIndicatorColor(with transition: ScrollTransition) {
-        guard canUpdateIndicatorColor, items.count > 0, let scrollIndicator = scrollIndicator,
-            transition.toIndex >= 0 && transition.toIndex < items.count,
-            transition.fromIndex >= 0 && transition.fromIndex < items.count,
+        guard canUpdateIndicatorColor, numberOfElements > 0, let scrollIndicator = scrollIndicator,
+            transition.toIndex >= 0 && transition.toIndex < numberOfElements,
+            transition.fromIndex >= 0 && transition.fromIndex < numberOfElements,
             let firstColor = items[transition.fromIndex].indicatorColor,
             let secondColor = items[transition.toIndex].indicatorColor else { return }
         
