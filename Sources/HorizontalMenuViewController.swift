@@ -105,6 +105,10 @@ public class HorizontalMenuViewController: UIViewController, MenuDataSource, Pag
             layoutController?.delegate = layoutDelegate
         }
     }
+
+    public var currentIndex: Int {
+        return paginationController.currentIndex
+    }
     
     /// If true, when users seleects an iten from menu, 
     /// all view controllers from current index to selected index will be loaded.
