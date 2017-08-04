@@ -13,7 +13,7 @@ extension Array {
     ///
     /// - Parameter index: the index to check.
     /// - Returns: `true` if index within array bounds [0, count), `false` otherwise.
-    public func isValid(index: Int) -> Bool {
+    func isValid(index: Int) -> Bool {
         return index >= startIndex && index < endIndex
     }
 }

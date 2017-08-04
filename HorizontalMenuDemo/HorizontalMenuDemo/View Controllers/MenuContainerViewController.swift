@@ -60,16 +60,17 @@ class MenuContainerViewController: UIViewController, LayoutControllerDelegate {
     func layoutController(layoutController: LayoutController, geometryForItemAt index: Int) -> ItemGeometry {
         let view = menuViewController.items[index].view
         let button = view as? UIButton
+        let selectState = button?.isSelected
         button?.isSelected = true
         let geometry = ViewGeometry(view: view)
-        button?.isSelected = false
+        button?.isSelected = selectState ?? false
         return geometry
     }
 }
 
 // MARK: - HorizontalMenuViewControllerDataSource
 extension MenuContainerViewController: HorizontalMenuViewControllerDataSource {
-    func horizontalMenuViewControllerNumberOfItems(horizontalMenuViewController: HorizontalMenuViewController) -> Int {
+    func horizontalMenuViewControllerNumberOfElements(horizontalMenuViewController: HorizontalMenuViewController) -> Int {
         return items.count
     }
     
@@ -113,7 +114,7 @@ extension MenuContainerViewController: HorizontalMenuViewControllerDataSource {
                                       viewControllerFor index: Int) -> UIViewController {
         let screen: MenuScreenViewController = UIStoryboard.loadMainStoryboardVC()
         
-        let white = CGFloat(index + 1) / CGFloat(horizontalMenuViewController.items.count)
+        let white = CGFloat(index + 1) / CGFloat(horizontalMenuViewController.numberOfElements)
         screen.view.backgroundColor = UIColor(white: white, alpha: 1.0)
         let item = items[index]
         let text = item.text

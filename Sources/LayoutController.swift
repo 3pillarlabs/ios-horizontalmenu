@@ -11,16 +11,21 @@ import UIKit
 @objc public protocol LayoutControllerDelegate: class {
     /// Asks the delegate for geometry object which to be used.
     ///
-    /// - Parameter layoutController: the object which requests the geometry,
+    /// - Parameter layoutController: the object which requests the geometry.
     /// - Returns: the geometry object.
     @objc optional func layoutControllerMenuGeometry(layoutController: LayoutController) -> MenuGeometry
     /// Asks the delegate for geometry object which to be used for item at provided index.
     ///
     /// - Parameters:
-    ///   - layoutController: the object which requests the geometry,
+    ///   - layoutController: the object which requests the geometry.
     ///   - index: the index of item.
     /// - Returns: the geometry object.
     @objc optional func layoutController(layoutController: LayoutController, geometryForItemAt index: Int) -> ItemGeometry
+    /// Asks the delegate if it should adjust the offset for screens' scroll view. By default is performed.
+    ///
+    /// - Parameter layoutController: the object which requests the geometry.
+    /// - Returns: true or false.
+    @objc optional func layoutControllerAdjustsScreensScrollOffset(layoutController: LayoutController) -> Bool
 }
 
 /// An object which is responsible with the layout of the menu.
@@ -41,6 +46,10 @@ public class LayoutController: NSObject, GeometryHolder {
     
     public private (set) var menuGeometry = MenuGeometry()
     public private (set) var itemsGeometry: [ItemGeometry] = []
+
+    private var adjustsScreenScrollOffset: Bool {
+        return delegate?.layoutControllerAdjustsScreensScrollOffset?(layoutController: self) ?? true
+    }
     
     init(menuDataSource: MenuDataSource) {
         self.menuDataSource = menuDataSource
@@ -102,21 +111,31 @@ public class LayoutController: NSObject, GeometryHolder {
     
     private func layoutScrollViews() {
         menuDataSource.itemsScrollView.contentSize = computeItemsContentSize()
-        menuDataSource.screenScrollView.contentSize = computeScreensContentSize()
-        
-        var itemsFrame = menuDataSource.itemsScrollView.frame
+
+        let menuBounds = menuDataSource.menuContainerView.bounds
+
+        var itemsFrame = menuBounds
         itemsFrame.size.width = menuDataSource.menuContainerView.bounds.width
         itemsFrame.size.height = menuDataSource.itemsScrollView.contentSize.height
+        itemsFrame.size.height += menuDataSource.topLayoutLength
         menuDataSource.itemsScrollView.frame = itemsFrame
-        
-        var itemsContainerFrame = itemsFrame
+
+        menuDataSource.itemsScrollView.contentInset = UIEdgeInsetsMake(menuDataSource.topLayoutLength, 0.0, 0.0, 0.0)
+
+        menuDataSource.screenScrollView.contentSize = computeScreensContentSize()
+
+        var itemsContainerFrame = CGRect.zero
         itemsContainerFrame.origin.x = menuGeometry.itemsInset.left
         itemsContainerFrame.origin.y = menuGeometry.itemsInset.top
         itemsContainerFrame.size = computeItemsSize()
         menuDataSource.itemsContainerView.frame = itemsContainerFrame
-        
+
         var screensFrame = menuDataSource.screenScrollView.frame
-        screensFrame.origin.y = itemsFrame.height
+        if adjustsScreenScrollOffset {
+            screensFrame.origin.y = itemsFrame.maxY
+        } else {
+            screensFrame.origin.y = menuBounds.minY
+        }
         screensFrame.size.width = itemsFrame.size.width
         screensFrame.size.height = menuDataSource.screenScrollView.contentSize.height
         menuDataSource.screenScrollView.frame = screensFrame
@@ -144,7 +163,7 @@ public class LayoutController: NSObject, GeometryHolder {
         case .top:
             indicatorFrame.origin.y = 0.0
         case .bottom:
-            indicatorFrame.origin.y = menuDataSource.itemsScrollView.bounds.height - indicatorFrame.height
+            indicatorFrame.origin.y = menuDataSource.itemsScrollView.contentSize.height - indicatorFrame.height
         }
         
         switch layoutTransition {
@@ -209,16 +228,20 @@ public class LayoutController: NSObject, GeometryHolder {
     
     private func computeScreensContentSize() -> CGSize {
         var size = CGSize()
-        
-        size.width = CGFloat(menuDataSource.items.count) * menuDataSource.screenScrollView.bounds.width
-        size.height = menuDataSource.menuContainerView.bounds.height - menuDataSource.itemsScrollView.bounds.height
+
+        size.width = CGFloat(menuDataSource.numberOfElements) * menuDataSource.screenScrollView.bounds.width
+        size.height = menuDataSource.menuContainerView.bounds.height
+
+        if adjustsScreenScrollOffset {
+            size.height -= menuDataSource.itemsScrollView.frame.maxY
+        }
         
         return size
     }
     
     private func convertTransitionIntoLayout(scroll transition: ScrollTransition) -> Transition {
-        let fromIndexIsValid = menuDataSource.items.isValid(index: transition.fromIndex)
-        let toIndexIsValid = menuDataSource.items.isValid(index: transition.toIndex)
+        let fromIndexIsValid = menuDataSource.isValid(index: transition.fromIndex)
+        let toIndexIsValid = menuDataSource.isValid(index: transition.toIndex)
         
         switch (fromIndexIsValid, toIndexIsValid) {
         case (true, true):

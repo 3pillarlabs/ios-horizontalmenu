@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		54D3E43A1E7156D70073227E /* GeometryHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D3E4391E7156D70073227E /* GeometryHolder.swift */; };
-		54F29C8C1E71827B00BDCBA8 /* AppearenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F29C8B1E71827B00BDCBA8 /* AppearenceController.swift */; };
+		54F29C8C1E71827B00BDCBA8 /* AppearanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F29C8B1E71827B00BDCBA8 /* AppearanceController.swift */; };
 		54F29C931E719F9600BDCBA8 /* UIScrollView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F29C921E719F9600BDCBA8 /* UIScrollView+Extension.swift */; };
 		FF03CCA01E7035A500E056DD /* HorizontalMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF03CC9F1E7035A500E056DD /* HorizontalMenuViewController.swift */; };
 		FF03CCA21E7040A000E056DD /* ViewGeometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF03CCA11E7040A000E056DD /* ViewGeometry.swift */; };
@@ -66,7 +66,7 @@
 
 /* Begin PBXFileReference section */
 		54D3E4391E7156D70073227E /* GeometryHolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeometryHolder.swift; sourceTree = "<group>"; };
-		54F29C8B1E71827B00BDCBA8 /* AppearenceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearenceController.swift; sourceTree = "<group>"; };
+		54F29C8B1E71827B00BDCBA8 /* AppearanceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearanceController.swift; sourceTree = "<group>"; };
 		54F29C921E719F9600BDCBA8 /* UIScrollView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Extension.swift"; sourceTree = "<group>"; };
 		FF03CC9F1E7035A500E056DD /* HorizontalMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalMenuViewController.swift; sourceTree = "<group>"; };
 		FF03CCA11E7040A000E056DD /* ViewGeometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewGeometry.swift; sourceTree = "<group>"; };
@@ -233,7 +233,7 @@
 		FFBFFC411E84068C00305693 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				54F29C8B1E71827B00BDCBA8 /* AppearenceController.swift */,
+				54F29C8B1E71827B00BDCBA8 /* AppearanceController.swift */,
 				FFBA3F991E79417500B130D1 /* ContainerLifeCycleController.swift */,
 				FFD39E241E7BEDF6003C52D6 /* ContainerLoaderController.swift */,
 				FFB6EFDA1E6ED469005087BA /* LayoutController.swift */,
@@ -419,7 +419,7 @@
 				FF85CD4C1E7819B000845D4C /* SelectGestureRecognizer.swift in Sources */,
 				FFB6EFEB1E6EFDD4005087BA /* ProgressPoint.swift in Sources */,
 				FFBA3F9E1E7943B200B130D1 /* ViewControllerState.swift in Sources */,
-				54F29C8C1E71827B00BDCBA8 /* AppearenceController.swift in Sources */,
+				54F29C8C1E71827B00BDCBA8 /* AppearanceController.swift in Sources */,
 				FF03CCA01E7035A500E056DD /* HorizontalMenuViewController.swift in Sources */,
 				FFB6EFD21E6EB8ED005087BA /* SelectionController.swift in Sources */,
 				FFBA3FA01E79447100B130D1 /* ViewDidLoadState.swift in Sources */,

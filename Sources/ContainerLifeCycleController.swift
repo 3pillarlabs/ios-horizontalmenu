@@ -48,7 +48,7 @@ class ContainerLifeCycleController {
     }
     
     func prepareMachine(for index: Int) {
-        guard menuDataSource.items.isValid(index: index), stateMachines[index] == nil else { return }
+        guard menuDataSource.isValid(index: index), stateMachines[index] == nil else { return }
         
         let stateMachine = createStateMachine(for: index)
         stateMachine.enter(ViewDidLoadState.self)
@@ -56,7 +56,7 @@ class ContainerLifeCycleController {
     }
     
     func removeMachine(for index: Int) {
-        guard menuDataSource.items.isValid(index: index), stateMachines[index] != nil else { return }
+        guard menuDataSource.isValid(index: index), stateMachines[index] != nil else { return }
         stateMachines[index] = nil
     }
     
@@ -85,8 +85,8 @@ class ContainerLifeCycleController {
     }
     
     private func createState(from transition: ScrollTransition) -> State {
-        let fromIndexIsValid = menuDataSource.items.isValid(index: transition.fromIndex)
-        let toIndexIsValid = menuDataSource.items.isValid(index: transition.toIndex)
+        let fromIndexIsValid = menuDataSource.isValid(index: transition.fromIndex)
+        let toIndexIsValid = menuDataSource.isValid(index: transition.toIndex)
         
         switch (fromIndexIsValid, toIndexIsValid) {
         case (true, true) where transition.kind == .selection:

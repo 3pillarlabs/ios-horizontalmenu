@@ -33,7 +33,7 @@ class ContainerLoaderController {
     }
     
     func preloadScreen(for index: Int) {
-        guard menuController.items.isValid(index: index), menuController.screens[index] == nil,
+        guard menuController.isValid(index: index), menuController.screens[index] == nil,
             let childViewController = menuController.dataSource?.horizontalMenuViewController(horizontalMenuViewController: menuController,
                                                                                               viewControllerFor: index)
             else { return }
@@ -64,7 +64,7 @@ class ContainerLoaderController {
     }
     
     func unloadScreens(except range: ClosedRange<Int>) {
-        for index in 0..<menuController.items.count {
+        for index in 0..<menuController.numberOfElements {
             guard range.contains(index) == false else { continue }
             
             unloadScreen(for: index)
@@ -78,7 +78,7 @@ class ContainerLoaderController {
     }
     
     func unloadScreen(for index: Int) {
-        guard menuController.items.isValid(index: index),
+        guard menuController.isValid(index: index),
             let childViewController = menuController.screens[index] else { return }
         
         childViewController.willMove(toParentViewController: nil)

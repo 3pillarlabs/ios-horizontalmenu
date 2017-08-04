@@ -118,7 +118,7 @@ public class PaginationController: NSObject, UIScrollViewDelegate {
         }
         
         let index = Int(floatingIndex)
-        guard index >= 0, index < menuDataSource.items.count else { return }
+        guard index >= 0, index < menuDataSource.numberOfElements else { return }
         
         if currentIndex != index {
             currentIndex = index

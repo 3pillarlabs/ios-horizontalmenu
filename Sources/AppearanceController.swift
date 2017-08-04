@@ -1,5 +1,5 @@
 //
-//  AppearenceController.swift
+//  AppearanceController.swift
 //  TPGHorizontalMenu
 //
 //  Created by Horatiu Potra on 09/03/2017.
@@ -9,7 +9,7 @@
 import UIKit
 
 /// An object which is responsible with appereance control of menu items.
-class AppearenceController {
+class AppearanceController {
     private enum Layout {
         case scroll(offset: CGPoint)
         case none
@@ -40,15 +40,11 @@ class AppearenceController {
     // MARK: Private functionality
     
     private func isValid(_ transition: ScrollTransition) -> Bool {
-        return isValid(transition.toIndex)
-    }
-    
-    private func isValid(_ index: Int) -> Bool {
-        return menuViewController.items.isValid(index: index)
+        return menuViewController.isValid(index: transition.toIndex)
     }
     
     private func appearanceLayout(for index: Int, and progress: CGFloat) -> Layout {
-        guard isValid(index) else { return .none }
+        guard menuViewController.items.isValid(index: index) else { return .none }
         
         let item = menuViewController.items[index]
         let spacing = offsetSpacing(for: index)
@@ -98,7 +94,7 @@ class AppearenceController {
         
         if animated {
             let delegateAnimation = menuViewController.delegate?.horizontalMenuViewControllerAnimationForEdgeAppearance?(horizontalMenuViewController: menuViewController)
-            let animation = delegateAnimation ?? AppearenceController.defaultAppearanceAnimation
+            let animation = delegateAnimation ?? AppearanceController.defaultAppearanceAnimation
             
             animation.addAnimation(change)
             animation.animate()
@@ -130,7 +126,7 @@ class AppearenceController {
             self.previousTransition = nil
         }
         
-        if !isValid(transition.toIndex) {
+        if !isValid(transition) {
             reset()
             let layout = appearanceLayout(for: transition.fromIndex, and: 1.0)
             perform(layout: layout, animated: true)
@@ -140,7 +136,7 @@ class AppearenceController {
     }
     
     private func offsetSpacing(for index: Int) -> CGFloat {
-        guard index >= 0 && index < menuViewController.items.count else { return 0.0 }
+        guard index >= 0 && index < menuViewController.numberOfElements else { return 0.0 }
         
         switch index {
         case 0:

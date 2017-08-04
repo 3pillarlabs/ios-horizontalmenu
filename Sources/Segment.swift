@@ -14,4 +14,9 @@ public struct Segment<SegmentPoint: BasicArithmetic>: ProgressPoint {
     
     public let first: SegmentPoint
     public let second: SegmentPoint
+
+    public init(first: SegmentPoint, second: SegmentPoint) {
+        self.first = first
+        self.second = second
+    }
 }
