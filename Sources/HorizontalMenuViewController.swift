@@ -67,6 +67,9 @@ import UIKit
     @objc optional func horizontalMenuViewControllerAnimationForEdgeAppearance(horizontalMenuViewController: HorizontalMenuViewController) -> Animation
 }
 
+/// A view controller which manages the display of a horizontal menu.
+/// This menu adjusts the scroll content insests of its content. Therefore, the parent view controller
+/// should set automaticallyAdjustsScrollViewInsets to false.
 public class HorizontalMenuViewController: UIViewController, MenuDataSource, PaginationControllerDelegate {
     public private (set) var items: [MenuItem] = []
     public internal (set) var screens: [Int : UIViewController] = [:]
@@ -87,6 +90,10 @@ public class HorizontalMenuViewController: UIViewController, MenuDataSource, Pag
     }
     
     public var scrollIndicator: UIView?
+
+    public var topLayoutLength: CGFloat {
+        return topLayoutGuide.length
+    }
     
     /// The data source for menu.
     public weak var dataSource: HorizontalMenuViewControllerDataSource? {
@@ -158,7 +165,7 @@ public class HorizontalMenuViewController: UIViewController, MenuDataSource, Pag
         super.viewDidLayoutSubviews()
         
         layoutController.layoutMenuContainerView()
-        if let scrollIndicator = scrollIndicator {
+        if let scrollIndicator = scrollIndicator, selectionOperation == nil {
             let transition = ScrollTransition(toIndex: paginationController.currentIndex)
             layoutController.layout(scrollIndicator: scrollIndicator, transition: transition)
         }
@@ -212,19 +219,20 @@ public class HorizontalMenuViewController: UIViewController, MenuDataSource, Pag
     // MARK: Private functionality
     
     private func initializeSubviews() {
-        _itemsScrollView = UIScrollView()
-        _itemsScrollView.showsHorizontalScrollIndicator = false
-        _itemsScrollView.showsVerticalScrollIndicator = false
-        view.addSubview(_itemsScrollView)
-        
-        _itemsContainerView = UIView()
-        _itemsScrollView.addSubview(_itemsContainerView)
-        
         _screenScrollView = UIScrollView()
         _screenScrollView.showsHorizontalScrollIndicator = false
         _screenScrollView.showsVerticalScrollIndicator = false
         _screenScrollView.isPagingEnabled = true
         view.addSubview(_screenScrollView)
+
+        _itemsScrollView = UIScrollView()
+        _itemsScrollView.showsHorizontalScrollIndicator = false
+        _itemsScrollView.showsVerticalScrollIndicator = false
+
+        view.addSubview(_itemsScrollView)
+
+        _itemsContainerView = UIView()
+        _itemsScrollView.addSubview(_itemsContainerView)
     }
     
     private func initializeControllers() {
@@ -276,8 +284,7 @@ public class HorizontalMenuViewController: UIViewController, MenuDataSource, Pag
     
     private func updateScrollIndicatorColor(with transition: ScrollTransition) {
         guard canUpdateIndicatorColor, numberOfElements > 0, let scrollIndicator = scrollIndicator,
-            transition.toIndex >= 0 && transition.toIndex < numberOfElements,
-            transition.fromIndex >= 0 && transition.fromIndex < numberOfElements,
+            isValid(index: transition.toIndex), isValid(index: transition.fromIndex),
             let firstColor = items[transition.fromIndex].indicatorColor,
             let secondColor = items[transition.toIndex].indicatorColor else { return }
         

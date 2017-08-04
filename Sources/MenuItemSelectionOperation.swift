@@ -65,10 +65,11 @@ class MenuItemSelectionOperation: Operation {
             let controller = strongSelf.menuController
             controller.paginationController.scroll(to: strongSelf.index)
             
+            let transition = ScrollTransition(toIndex: strongSelf.index, progress: 1.0)
+            controller.appearenceController.updateItemsScrollView(using: transition)
+
             if let scrollIndicator = controller.scrollIndicator {
-                let transition = ScrollTransition(toIndex: strongSelf.index, progress: 1.0)
                 controller.layoutController.layout(scrollIndicator: scrollIndicator, transition: transition)
-                controller.appearenceController.updateItemsScrollView(using: transition)
                 scrollIndicator.backgroundColor = controller.items[strongSelf.index].indicatorColor
             }
         })

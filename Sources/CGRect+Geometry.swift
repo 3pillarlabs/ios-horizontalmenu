@@ -22,8 +22,8 @@ extension CGRect {
     /// - Parameter inset: the inset values.
     /// - Returns: A rectangle which has the requested changes.
     public func insetBy(_ inset: UIEdgeInsets) -> CGRect {
-        let xInset = (inset.left + inset.right ) / 2
-        let yInset = (inset.top + inset.bottom ) / 2
+        let xInset = (inset.left + inset.right) / 2
+        let yInset = (inset.top + inset.bottom) / 2
         
         return insetBy(dx: xInset, dy: yInset)
     }

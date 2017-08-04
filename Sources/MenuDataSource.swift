@@ -31,6 +31,9 @@ public protocol MenuDataSource: class {
     /// The number of elements is the same for items and screen.
     /// However the items.count might be 0 because they are optional.
     var numberOfElements: Int { get }
+
+    /// The constant of top layout guide
+    var topLayoutLength: CGFloat { get }
 }
 
 extension MenuDataSource {

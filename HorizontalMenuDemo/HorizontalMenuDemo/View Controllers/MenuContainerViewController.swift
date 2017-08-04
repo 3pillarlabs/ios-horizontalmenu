@@ -60,9 +60,10 @@ class MenuContainerViewController: UIViewController, LayoutControllerDelegate {
     func layoutController(layoutController: LayoutController, geometryForItemAt index: Int) -> ItemGeometry {
         let view = menuViewController.items[index].view
         let button = view as? UIButton
+        let selectState = button?.isSelected
         button?.isSelected = true
         let geometry = ViewGeometry(view: view)
-        button?.isSelected = false
+        button?.isSelected = selectState ?? false
         return geometry
     }
 }
