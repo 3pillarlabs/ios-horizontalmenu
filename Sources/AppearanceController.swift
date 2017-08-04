@@ -1,5 +1,5 @@
 //
-//  AppearenceController.swift
+//  AppearanceController.swift
 //  TPGHorizontalMenu
 //
 //  Created by Horatiu Potra on 09/03/2017.
@@ -9,7 +9,7 @@
 import UIKit
 
 /// An object which is responsible with appereance control of menu items.
-class AppearenceController {
+class AppearanceController {
     private enum Layout {
         case scroll(offset: CGPoint)
         case none
@@ -94,7 +94,7 @@ class AppearenceController {
         
         if animated {
             let delegateAnimation = menuViewController.delegate?.horizontalMenuViewControllerAnimationForEdgeAppearance?(horizontalMenuViewController: menuViewController)
-            let animation = delegateAnimation ?? AppearenceController.defaultAppearanceAnimation
+            let animation = delegateAnimation ?? AppearanceController.defaultAppearanceAnimation
             
             animation.addAnimation(change)
             animation.animate()
@@ -126,7 +126,7 @@ class AppearenceController {
             self.previousTransition = nil
         }
         
-        if !menuViewController.isValid(index: transition.toIndex) {
+        if !isValid(transition) {
             reset()
             let layout = appearanceLayout(for: transition.fromIndex, and: 1.0)
             perform(layout: layout, animated: true)

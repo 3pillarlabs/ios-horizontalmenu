@@ -66,7 +66,7 @@ class MenuItemSelectionOperation: Operation {
             controller.paginationController.scroll(to: strongSelf.index)
             
             let transition = ScrollTransition(toIndex: strongSelf.index, progress: 1.0)
-            controller.appearenceController.updateItemsScrollView(using: transition)
+            controller.appearanceController.updateItemsScrollView(using: transition)
 
             if let scrollIndicator = controller.scrollIndicator {
                 controller.layoutController.layout(scrollIndicator: scrollIndicator, transition: transition)

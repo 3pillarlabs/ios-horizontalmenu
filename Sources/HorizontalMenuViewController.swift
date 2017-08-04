@@ -131,7 +131,7 @@ public class HorizontalMenuViewController: UIViewController, MenuDataSource, Pag
     
     private (set) var layoutController: LayoutController!
     private (set) var paginationController: PaginationController!
-    private (set) var appearenceController: AppearenceController!
+    private (set) var appearanceController: AppearanceController!
     private (set) var selectionController: SelectionController!
     private (set) var containerLifeCycleController: ContainerLifeCycleController!
     private (set) var containerLoaderController: ContainerLoaderController!
@@ -202,7 +202,7 @@ public class HorizontalMenuViewController: UIViewController, MenuDataSource, Pag
         }
         updateScrollIndicatorColor(with: scrollTransition)
         let animated = !isValid(index: scrollTransition.toIndex)
-        appearenceController.updateItemsScrollView(using: scrollTransition, animated: animated)
+        appearanceController.updateItemsScrollView(using: scrollTransition, animated: animated)
         
         delegate?.horizontalMenuViewController?(horizontalMenuViewController: self,
                                                 scrollTransition: scrollTransition)
@@ -240,7 +240,7 @@ public class HorizontalMenuViewController: UIViewController, MenuDataSource, Pag
         layoutController.delegate = layoutDelegate
         paginationController = PaginationController(menuDataSource: self)
         paginationController.delegate = self
-        appearenceController = AppearenceController(menuViewController: self, geometryHolder: layoutController)
+        appearanceController = AppearanceController(menuViewController: self, geometryHolder: layoutController)
         selectionController = SelectionController(menuDataSource: self)
         selectionController.delegate = self
         containerLifeCycleController = ContainerLifeCycleController(menuDataSource: self)
