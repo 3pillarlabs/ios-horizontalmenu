@@ -117,10 +117,7 @@ public class LayoutController: NSObject, GeometryHolder {
         var itemsFrame = menuBounds
         itemsFrame.size.width = menuDataSource.menuContainerView.bounds.width
         itemsFrame.size.height = menuDataSource.itemsScrollView.contentSize.height
-        itemsFrame.size.height += menuDataSource.topLayoutLength
         menuDataSource.itemsScrollView.frame = itemsFrame
-
-        menuDataSource.itemsScrollView.contentInset = UIEdgeInsetsMake(menuDataSource.topLayoutLength, 0.0, 0.0, 0.0)
 
         menuDataSource.screenScrollView.contentSize = computeScreensContentSize()
 
