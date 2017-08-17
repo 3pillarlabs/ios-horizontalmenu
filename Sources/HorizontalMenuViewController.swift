@@ -92,7 +92,7 @@ public class HorizontalMenuViewController: UIViewController, MenuDataSource, Pag
     
     public var scrollIndicator: UIView?
     
-    /// The data source for menu.
+    /// The data source for menu. If view is reloaded, the menu will reload the content.
     public weak var dataSource: HorizontalMenuViewControllerDataSource? {
         didSet {
             if isViewLoaded {
