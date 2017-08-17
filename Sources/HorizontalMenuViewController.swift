@@ -68,8 +68,9 @@ import UIKit
 }
 
 /// A view controller which manages the display of a horizontal menu.
-/// This menu adjusts the scroll content insests of its content. Therefore, the parent view controller
-/// should set automaticallyAdjustsScrollViewInsets to false.
+/// This menu adjusts the scroll content insests of its content. Therefore, layout controller's delegate should
+/// return MenuGeometry items' insets by adding top spacing (including status bar height) and
+/// the root parent view controller should set automaticallyAdjustsScrollViewInsets to false.
 public class HorizontalMenuViewController: UIViewController, MenuDataSource, PaginationControllerDelegate {
     public private (set) var items: [MenuItem] = []
     public internal (set) var screens: [Int : UIViewController] = [:]
@@ -90,10 +91,6 @@ public class HorizontalMenuViewController: UIViewController, MenuDataSource, Pag
     }
     
     public var scrollIndicator: UIView?
-
-    public var topLayoutLength: CGFloat {
-        return topLayoutGuide.length
-    }
     
     /// The data source for menu.
     public weak var dataSource: HorizontalMenuViewControllerDataSource? {
