@@ -147,9 +147,6 @@ public class HorizontalMenuViewController: UIViewController, MenuDataSource, Pag
         // Do any additional setup after loading the view.
         initializeSubviews()
         initializeControllers()
-        
-        reloadData()
-        containerLifeCycleController.update(currentIndex: 0)
     }
     
     public override func viewDidAppear(_ animated: Bool) {
@@ -181,11 +178,13 @@ public class HorizontalMenuViewController: UIViewController, MenuDataSource, Pag
         paginationController.scroll(to: 0)
         containerLoaderController.preloadScreensForCurrentIndex()
         containerLifeCycleController.reload()
+        containerLifeCycleController.update(currentIndex: 0)
         
         addScrollIndicator()
         updateAbilityToChangeIndicatorColor()
 
         selectionController.resetItemsHandling()
+        view.setNeedsLayout()
     }
     
     // MARK: PaginationControllerDelegate

@@ -61,6 +61,7 @@ public class LayoutController: NSObject, GeometryHolder {
         if let menuGeometry = delegate?.layoutControllerMenuGeometry?(layoutController: self) {
             self.menuGeometry = menuGeometry
         }
+        reloadItemsGeometry()
         layoutScrollViews()
         layoutItems()
         layoutScreens()
@@ -139,7 +140,6 @@ public class LayoutController: NSObject, GeometryHolder {
     }
     
     private func layoutItems() {
-        reloadItemsGeometry()
         for (index, item) in menuDataSource.items.enumerated() {
             layout(item: item, at: index)
         }
