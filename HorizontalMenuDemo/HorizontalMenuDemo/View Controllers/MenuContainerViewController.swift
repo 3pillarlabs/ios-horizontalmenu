@@ -37,14 +37,14 @@ class MenuContainerViewController: UIViewController, LayoutControllerDelegate {
         }
 
         menuViewController = HorizontalMenuViewController()
-        menuViewController.dataSource = self
         menuViewController.willMove(toParentViewController: self)
         menuViewController.view.frame = view.bounds
         menuViewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         menuViewController.view.backgroundColor = UIColor.menuBackgroundColor()
         view.addSubview(menuViewController.view)
         addChildViewController(menuViewController)
-        
+
+        menuViewController.dataSource = self
         menuViewController.layoutDelegate = self
     }
     
