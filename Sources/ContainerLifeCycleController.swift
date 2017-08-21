@@ -67,6 +67,22 @@ class ContainerLifeCycleController {
     func update(currentIndex index: Int) {
         state = .changing(toIndex: index)
     }
+
+    func startAppearanceForCurrentIndex() {
+        startAppearance(for: menuDataSource.currentIndex)
+    }
+
+    func endAppearanceForCurrentIndex() {
+        endAppearance(for: menuDataSource.currentIndex)
+    }
+
+    func startDisappearanceForCurrentIndex() {
+        startDisappearance(for: menuDataSource.currentIndex)
+    }
+
+    func endDisappearanceForCurrentIndex() {
+        endDisappearance(for: menuDataSource.currentIndex)
+    }
     
     // MARK: Private functionality
     

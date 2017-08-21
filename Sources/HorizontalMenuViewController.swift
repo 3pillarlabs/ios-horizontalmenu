@@ -148,11 +148,30 @@ public class HorizontalMenuViewController: UIViewController, MenuDataSource, Pag
         initializeSubviews()
         initializeControllers()
     }
+
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        containerLifeCycleController.startAppearanceForCurrentIndex()
+    }
     
     public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         selectionController.selectItem(at: paginationController.currentIndex)
+        containerLifeCycleController.endAppearanceForCurrentIndex()
+    }
+
+    public override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        containerLifeCycleController.startDisappearanceForCurrentIndex()
+    }
+
+    public override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+
+        containerLifeCycleController.endDisappearanceForCurrentIndex()
     }
     
     public override func viewDidLayoutSubviews() {
