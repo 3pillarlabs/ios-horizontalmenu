@@ -32,8 +32,8 @@ class MenuContainerViewController: UIViewController, LayoutControllerDelegate {
         navigationController?.navigationBar.barTintColor = UIColor.menuItemBackgroundColor()
         
         if let titleFont = UIFont.titleItemFont() {
-            navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName : titleFont,
-                                                                       NSForegroundColorAttributeName : UIColor.menuItemTextColor()]
+            navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font : titleFont,
+                                                                       NSAttributedStringKey.foregroundColor : UIColor.menuItemTextColor()]
         }
 
         menuViewController = HorizontalMenuViewController()
@@ -86,22 +86,22 @@ extension MenuContainerViewController: HorizontalMenuViewControllerDataSource {
         let text = item.text
         
         if let font = UIFont.menuItemFont() {
-            let attributes = [NSFontAttributeName : font,
-                              NSForegroundColorAttributeName : UIColor.menuItemTextColor()]
+            let attributes = [NSAttributedStringKey.font : font,
+                              NSAttributedStringKey.foregroundColor : UIColor.menuItemTextColor()]
             let attributedText = NSAttributedString(string: text, attributes: attributes)
             menuView.setAttributedTitle(attributedText, for: .normal)
         }
         
         if let font = UIFont.menuItemFontHighlighted() {
-            let attributes = [NSFontAttributeName : font,
-                              NSForegroundColorAttributeName : UIColor.menuItemTextColor().withAlphaComponent(0.5)]
+            let attributes = [NSAttributedStringKey.font : font,
+                              NSAttributedStringKey.foregroundColor : UIColor.menuItemTextColor().withAlphaComponent(0.5)]
             let attributedText = NSAttributedString(string: text, attributes: attributes)
             menuView.setAttributedTitle(attributedText, for: .highlighted)
         }
         
         if let font = UIFont.menuItemFontSelected() {
-            let attributes = [NSFontAttributeName : font,
-                              NSForegroundColorAttributeName : UIColor.menuItemTextColor()]
+            let attributes = [NSAttributedStringKey.font : font,
+                              NSAttributedStringKey.foregroundColor : UIColor.menuItemTextColor()]
             let attributedText = NSAttributedString(string: text, attributes: attributes)
             menuView.setAttributedTitle(attributedText, for: .selected)
         }
