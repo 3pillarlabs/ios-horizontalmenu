@@ -12,8 +12,6 @@
 		FFBF6CC11E681DF6008B7F73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFBF6CC01E681DF6008B7F73 /* Assets.xcassets */; };
 		FFBF6CC41E681DF6008B7F73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFBF6CC21E681DF6008B7F73 /* LaunchScreen.storyboard */; };
 		FFBF6CCF1E681DF6008B7F73 /* HorizontalMenuDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBF6CCE1E681DF6008B7F73 /* HorizontalMenuDemoUITests.swift */; };
-		FFBF6CE51E681EF5008B7F73 /* TPGHorizontalMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBF6CE21E681EE2008B7F73 /* TPGHorizontalMenu.framework */; };
-		FFBF6CE61E681EF5008B7F73 /* TPGHorizontalMenu.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FFBF6CE21E681EE2008B7F73 /* TPGHorizontalMenu.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FFF72D481E89401B0012A0C0 /* UIStoryboard+Initialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF72D431E89401B0012A0C0 /* UIStoryboard+Initialization.swift */; };
 		FFF72D491E89401B0012A0C0 /* MenuScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF72D461E89401B0012A0C0 /* MenuScreenViewController.swift */; };
 		FFF72D4A1E89401B0012A0C0 /* MenuContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF72D471E89401B0012A0C0 /* MenuContainerViewController.swift */; };
@@ -30,27 +28,6 @@
 			remoteGlobalIDString = FFBF6CB51E681DF6008B7F73;
 			remoteInfo = HorizontalMenuDemo;
 		};
-		FFBF6CE11E681EE2008B7F73 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FFBF6CDC1E681EE2008B7F73 /* TPGHorizontalMenu.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = FFBF6C931E681D7D008B7F73;
-			remoteInfo = TPGHorizontalMenu;
-		};
-		FFBF6CE31E681EE2008B7F73 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FFBF6CDC1E681EE2008B7F73 /* TPGHorizontalMenu.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = FFBF6C9C1E681D7D008B7F73;
-			remoteInfo = TPGHorizontalMenuTests;
-		};
-		FFBF6CE71E681EF5008B7F73 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FFBF6CDC1E681EE2008B7F73 /* TPGHorizontalMenu.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = FFBF6C921E681D7D008B7F73;
-			remoteInfo = TPGHorizontalMenu;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -60,7 +37,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				FFBF6CE61E681EF5008B7F73 /* TPGHorizontalMenu.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -77,7 +53,6 @@
 		FFBF6CCA1E681DF6008B7F73 /* HorizontalMenuDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HorizontalMenuDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFBF6CCE1E681DF6008B7F73 /* HorizontalMenuDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalMenuDemoUITests.swift; sourceTree = "<group>"; };
 		FFBF6CD01E681DF6008B7F73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FFBF6CDC1E681EE2008B7F73 /* TPGHorizontalMenu.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TPGHorizontalMenu.xcodeproj; path = ../TPGHorizontalMenu/TPGHorizontalMenu.xcodeproj; sourceTree = "<group>"; };
 		FFF72D431E89401B0012A0C0 /* UIStoryboard+Initialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Initialization.swift"; sourceTree = "<group>"; };
 		FFF72D461E89401B0012A0C0 /* MenuScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuScreenViewController.swift; sourceTree = "<group>"; };
 		FFF72D471E89401B0012A0C0 /* MenuContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuContainerViewController.swift; sourceTree = "<group>"; };
@@ -91,7 +66,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFBF6CE51E681EF5008B7F73 /* TPGHorizontalMenu.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,7 +82,6 @@
 		FFBF6CAD1E681DF6008B7F73 = {
 			isa = PBXGroup;
 			children = (
-				FFBF6CDC1E681EE2008B7F73 /* TPGHorizontalMenu.xcodeproj */,
 				FFBF6CB81E681DF6008B7F73 /* HorizontalMenuDemo */,
 				FFBF6CCD1E681DF6008B7F73 /* HorizontalMenuDemoUITests */,
 				FFBF6CB71E681DF6008B7F73 /* Products */,
@@ -146,15 +119,6 @@
 				FFBF6CD01E681DF6008B7F73 /* Info.plist */,
 			);
 			path = HorizontalMenuDemoUITests;
-			sourceTree = "<group>";
-		};
-		FFBF6CDD1E681EE2008B7F73 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				FFBF6CE21E681EE2008B7F73 /* TPGHorizontalMenu.framework */,
-				FFBF6CE41E681EE2008B7F73 /* TPGHorizontalMenuTests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		FFF72D421E89401B0012A0C0 /* Extensions */ = {
@@ -199,7 +163,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				FFBF6CE81E681EF5008B7F73 /* PBXTargetDependency */,
 			);
 			name = HorizontalMenuDemo;
 			productName = HorizontalMenuDemo;
@@ -259,12 +222,6 @@
 			mainGroup = FFBF6CAD1E681DF6008B7F73;
 			productRefGroup = FFBF6CB71E681DF6008B7F73 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = FFBF6CDD1E681EE2008B7F73 /* Products */;
-					ProjectRef = FFBF6CDC1E681EE2008B7F73 /* TPGHorizontalMenu.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				FFBF6CB51E681DF6008B7F73 /* HorizontalMenuDemo */,
@@ -272,23 +229,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		FFBF6CE21E681EE2008B7F73 /* TPGHorizontalMenu.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = TPGHorizontalMenu.framework;
-			remoteRef = FFBF6CE11E681EE2008B7F73 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		FFBF6CE41E681EE2008B7F73 /* TPGHorizontalMenuTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = TPGHorizontalMenuTests.xctest;
-			remoteRef = FFBF6CE31E681EE2008B7F73 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		FFBF6CB41E681DF6008B7F73 /* Resources */ = {
@@ -340,11 +280,6 @@
 			isa = PBXTargetDependency;
 			target = FFBF6CB51E681DF6008B7F73 /* HorizontalMenuDemo */;
 			targetProxy = FFBF6CCB1E681DF6008B7F73 /* PBXContainerItemProxy */;
-		};
-		FFBF6CE81E681EF5008B7F73 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = TPGHorizontalMenu;
-			targetProxy = FFBF6CE71E681EF5008B7F73 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
