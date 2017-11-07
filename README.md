@@ -30,14 +30,74 @@ It's a UI component similar to UIPageViewController that helps you to create a m
 
 ## Table of contents
 
-- [Usage](https://github.com/3pillarlabs/ios-horizontalmenu#usage)
 - [Installation](https://github.com/3pillarlabs/ios-horizontalmenu#installation)
-	- [Git Submodule](https://github.com/3pillarlabs/ios-horizontalmenu#1-git-submodule)
-	- [Carthage](https://github.com/3pillarlabs/ios-horizontalmenu#2-carthage)
 	- [CocoaPods](https://github.com/3pillarlabs/ios-horizontalmenu#3-cocoapods)
+	- [Carthage](https://github.com/3pillarlabs/ios-horizontalmenu#2-carthage)
+- [Usage](https://github.com/3pillarlabs/ios-horizontalmenu#usage)
 - [Tips](https://github.com/3pillarlabs/ios-horizontalmenu#tips)
 - [Contribution](https://github.com/3pillarlabs/ios-horizontalmenu#contribution)
 - [License](https://github.com/3pillarlabs/ios-horizontalmenu#license)
+
+## Installation
+
+####Available in iOS 10.0 and later. 
+
+###CocoaPods Installation
+
+- Run Terminal
+
+- Navigate to project folder
+
+- Use command:
+
+```
+pod init
+```
+
+- Add code to podfile
+
+```
+platform :ios, '10.0'
+
+target 'YourProjectName' do
+  use_frameworks!
+    pod 'TPGHorizontalMenu'
+end
+```
+
+- Run command:
+
+```
+pod install
+```
+
+Remember to open project using workspace
+###Carthage Installation
+
+- Run Terminal
+
+- Navigate to project folder
+
+- Use command in terminal:
+```
+touch cartfile
+```
+
+- Add code to Cartfile:
+
+```
+github "3pillarlabs/ios-horizontalmenu.git"
+
+```
+
+- Run carthage by using command:
+
+```
+carthage update
+```
+- In order to link your app with the framework, you have to add the TPGHorizontalMenu in 'Embedded Binaries' list from 'General' section on application's target from Carthage/Build/iOS in project folder.
+
+![Add subproject example](assets/embed-binary-example.gif)
 
 ## Usage
 
@@ -109,43 +169,6 @@ func horizontalMenuViewController(horizontalMenuViewController: HorizontalMenuVi
 
 and now you have the menu visible in your application.
 
-## Installation
-
-Available in iOS 9.0 and later. 
-
-Choose your preffered dependency manager:
-
-### 1. [Git submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules)
-
-```
-git submodule add https://github.com/3pillarlabs/ios-horizontalmenu.git
-```
-
-After fetch, choose the commit which is tagged with the version you want to point to. Then you have to [add](https://github.com/3pillarlabs/ios-horizontalmenu#subproject-dependency) and  [link](https://github.com/3pillarlabs/ios-horizontalmenu#linkage) the framework.
-
-### 2. [Carthage](https://github.com/Carthage/Carthage)
-
-```
-github "3pillarlabs/ios-horizontalmenu" ~> 1.0
-```
-
-### 3. [CocoaPods](https://github.com/CocoaPods/CocoaPods)
-
-```
-Comming soon.
-```
-
-### Subproject dependency
-
-If you're using submodules or Swift Package Manager, we encourage you the add the framework as a subproject in your workspace/project
-
-![Embed binary example](assets/add-subproject-example.gif)
-
-### Linkage
-
-In order to link your app with the framework, you have to add the TPGHorizontalMenu in 'Embedded Binaries' list from 'General' section on application's target.
-
-![Add subproject example](assets/embed-binary-example.gif)
 
 ## Tips
 
