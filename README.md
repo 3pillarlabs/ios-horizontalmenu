@@ -40,9 +40,9 @@ It's a UI component similar to UIPageViewController that helps you to create a m
 
 ## Installation
 
-####Available in iOS 10.0 and later. 
+Available in iOS 10.0 and later. 
 
-###CocoaPods Installation
+CocoaPods Installation
 
 - Run Terminal
 
@@ -72,7 +72,8 @@ pod install
 ```
 
 Remember to open project using workspace
-###Carthage Installation
+
+Carthage Installation
 
 - Run Terminal
 
@@ -396,6 +397,8 @@ When user selects an menu item, only 2 callbacks are provided:
 If really you need callbacks, you may use CADisplayLink to provide callbacks for you.
 
 An important thing to know is that default animations have a duration of 0.3 seconds.
+
+Also if you feel the need for a small demo please check the demo project branch, add the framework and you are good to go.
 
 ## Contribution
 
