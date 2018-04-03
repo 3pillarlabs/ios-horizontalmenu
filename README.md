@@ -102,6 +102,8 @@ carthage update
 
 ## Usage
 
+A sample project is available on [demo brach](https://github.com/3pillarlabs/ios-horizontalmenu/tree/DemoProject).
+
 How to use the framework:
 
 - Import the framework
