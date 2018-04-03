@@ -14,7 +14,7 @@ import UIKit
 ///   [UIView - animateWithDuration:delay:usingSpringWithDamping:initialSpringVelocity:options:animations:completion:]
 ///   (apple-reference-documentation://hcEaMPVO1d)
 public class Animation: NSObject {
-    public typealias AnimationClosure = (Void) -> Void
+    public typealias AnimationClosure = () -> Void
     public typealias CompletionClosure = ((_ finished: Bool) -> Void)
     
     /// Animation's duration in seconds.
@@ -60,7 +60,7 @@ public class Animation: NSObject {
         self.animation = {
             currentAnimation?()
             animation()
-        }
+        } as Animation.AnimationClosure
     }
     
     public func addCompletion(_ completion: @escaping CompletionClosure) {
