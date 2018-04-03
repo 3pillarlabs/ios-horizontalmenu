@@ -6,8 +6,8 @@ Pod::Spec.new do |s|
   s.homepage     = "https://github.com/3pillarlabs/ios-horizontalmenu"
   s.license      = "MIT (example)"
   s.license      = { :type => "MIT", :file => "LICENSE" }
-  s.author             = { "Bogdan Todea" => "bogdan.todea@3pillarglobal.com" }
+  s.author       = "3Pillar Global"
   s.platform     = :ios, "10.0"
   s.source       = { :git => "https://github.com/3pillarlabs/ios-horizontalmenu.git", :tag => "#{s.version}" }
-  s.source_files  = "Sources", "Sources/**/*.{h,m}"
+  s.source_files = "Sources", "Sources/**/*.{h,m, swift}"
 end
