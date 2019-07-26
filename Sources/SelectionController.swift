@@ -100,7 +100,7 @@ class SelectionController {
     
     private func index(for view: UIView?) -> Int? {
         guard let view = view else { return nil }
-        return menuDataSource.items.index(where: { $0.view == view })
+        return menuDataSource.items.firstIndex(where: { $0.view == view })
     }
     
     private func clearTargets() {

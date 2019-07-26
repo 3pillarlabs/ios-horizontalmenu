@@ -124,7 +124,7 @@ public class HorizontalMenuViewController: UIViewController, MenuDataSource, Pag
         return dataSource?.horizontalMenuViewControllerNumberOfElements(horizontalMenuViewController: self) ?? 0
     }
     
-    internal (set) var selectionOperation: Operation?
+    var selectionOperation: Operation?
     
     private (set) var layoutController: LayoutController!
     private (set) var paginationController: PaginationController!

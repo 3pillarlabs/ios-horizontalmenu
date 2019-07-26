@@ -38,9 +38,9 @@ class ContainerLoaderController {
                                                                                               viewControllerFor: index)
             else { return }
         
-        childViewController.willMove(toParentViewController: menuController)
+        childViewController.willMove(toParent: menuController)
         menuController.screenScrollView.insertSubview(childViewController.view, at: 0)
-        menuController.addChildViewController(childViewController)
+        menuController.addChild(childViewController)
         menuController.screens[index] = childViewController
         
         menuController.containerLifeCycleController.prepareMachine(for: index)
@@ -81,9 +81,9 @@ class ContainerLoaderController {
         guard menuController.isValid(index: index),
             let childViewController = menuController.screens[index] else { return }
         
-        childViewController.willMove(toParentViewController: nil)
+        childViewController.willMove(toParent: nil)
         childViewController.view.removeFromSuperview()
-        childViewController.removeFromParentViewController()
+        childViewController.removeFromParent()
         menuController.screens[index] = nil
         
         menuController.containerLifeCycleController.removeMachine(for: index)

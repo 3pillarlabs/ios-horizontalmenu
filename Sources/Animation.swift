@@ -24,7 +24,7 @@ public class Animation: NSObject {
     /// An object which provides facility to use dynamics for animation.
     public let dynamics: AnimationDynamics?
     /// Animation's options.
-    public let options: UIViewAnimationOptions
+    public let options: UIView.AnimationOptions
     /// Closure where changes will be performed using an animation.
     public private (set) var animation: AnimationClosure?
     /// Closure which specifies the end of animation.
@@ -43,7 +43,7 @@ public class Animation: NSObject {
     ///   - animation: closure where changes will be performed using an animation.
     ///   - completion: closure which specifies the end of animation.
     public init(duration: TimeInterval, delay: TimeInterval = 0.0, dynamics: AnimationDynamics? = nil,
-                options: UIViewAnimationOptions = [], animation: AnimationClosure? = nil,
+                options: UIView.AnimationOptions = [], animation: AnimationClosure? = nil,
                 completion: CompletionClosure? = nil) {
         self.duration = duration
         self.delay = delay

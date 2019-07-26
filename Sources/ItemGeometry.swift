@@ -15,7 +15,7 @@ open class ItemGeometry: NSObject {
     }
     
     /// The size of item. Default value is (width: 44.0, height: 44.0).
-    open let size: CGSize
+    public let size: CGSize
     /// Alignment of menu itme. Default value is center.
     public let verticalAlignment: VerticalAlignment
     

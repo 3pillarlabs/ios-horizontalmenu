@@ -25,6 +25,6 @@ class ViewControllerState: GKState {
     }
     
     override func isValidNextState(_ stateClass: AnyClass) -> Bool {
-        return validNextStates.index(where: { $0 == stateClass }) != nil
+        return validNextStates.firstIndex(where: { $0 == stateClass }) != nil
     }
 }

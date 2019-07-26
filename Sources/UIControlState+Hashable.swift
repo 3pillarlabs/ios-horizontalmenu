@@ -8,9 +8,8 @@
 
 import Foundation
 
-extension UIControlState: Hashable {
-    /// Compute hash value.
-    public var hashValue: Int {
-        return Int(rawValue) * 1024
+extension UIControl.State: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(rawValue)
     }
 }

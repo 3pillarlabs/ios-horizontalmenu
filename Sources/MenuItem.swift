@@ -48,7 +48,7 @@ open class MenuItem: NSObject {
     /// - Parameters:
     ///   - textStates: a dictionary which contains attributed string for each state (normal, highlighted, selected)
     ///   - indicatorColor: background color for indicator view.
-    public convenience init(textStates: [UIControlState : NSAttributedString],
+    public convenience init(textStates: [UIControl.State : NSAttributedString],
                             indicatorColor: FinalColor? = nil) {
         let button = UIButton()
         
